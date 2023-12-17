@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<div class="card" style="width: 18rem">
+  <img src="<%= foundItem.img %>" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title"><%=foundItem.name%></h5>
+    <h5 class="card-title">RS. <%=foundItem.price%></h5>
+    <div class="d-flex flex-wrap">
+      <a href="/" class="btn btn-primary">Back</a>
+      <a href="/edit/<%=foundItem._id %>" class="btn btn-primary mx-2">Edit</a>
+      <form action="/delete/<%=foundItem._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer') %>

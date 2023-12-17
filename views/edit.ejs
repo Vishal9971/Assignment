@@ -1,0 +1,17 @@
+<%- include('./partials/header') %>
+<form action="/edit/<%= foundItem._id %>?_method=PATCH" method="POST">
+  <div class="d-flex flex-wrap m-2">
+    <label for="name">NAME : </label>
+    <input class="mx-3" type="text" id="name" name="name" value="<%= foundItem.name %>" />
+  </div>
+  <div class="d-flex flex-wrap m-2">
+    <label for="img">IMG-URL : </label>
+    <textarea class="mx-3" rows="3" cols="50" type="text" id="img" name="img"><%= foundItem.img %></textarea>
+  </div>
+  <div class="d-flex flex-wrap m-2">
+    <label for="price">Price : </label>
+    <input class="mx-3" type="text" id="price" name="price" value="<%= foundItem.price %>" />
+  </div>
+  <button class="d-flex flex-wrap m-2 btn btn-primary" type="submit">ADD</button>
+</form>
+<%- include('./partials/footer') %>

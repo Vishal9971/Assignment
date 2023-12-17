@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<h1>Add new item</h1>
+<a href="/new" class="btn btn-success">Add</a>
+
+<div class="d-flex flex-wrap justify-content-evenly m-3">
+  <% for(let item of allProduct){ %>
+  <div class="card my-3" style="width: 18rem">
+    <img src="<%= item.img %>" class="card-img-top selfImg" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%=item.name%></h5>
+      <h5 class="card-title">RS. <%=item.price%></h5>
+      <a href="/show/<%= item._id%>" class="btn btn-primary">View Product</a>
+    </div>
+  </div>
+  <% } %> <%- include('./partials/footer') %>
+</div>
